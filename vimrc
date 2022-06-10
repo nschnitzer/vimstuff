@@ -67,6 +67,12 @@ Plug 'joshdick/onedark.vim'
 
 Plug 'davidhalter/jedi-vim'
 
+Plug 'ajh17/spacegray.vim'
+
+Plug 'scrooloose/nerdtree'
+
+Plug 'PhilRunninger/nerdtree-buffer-ops'
+
 call plug#end()
 
 
@@ -76,16 +82,30 @@ nmap ga <Plug>(EasyAlign)
 
 
 " OneDark Config
-let g:onedark_termcolors=16
+" let g:onedark_termcolors=16
 
-colorscheme onedark
+" colorscheme onedark
 
+
+" Space gray theme
+":set termguicolors
+colorscheme spacegray
 
 " Jedi Vim Config
 let g:jedi#use_tabs_not_buffers = 1
 let g:jedi#use_splits_not_buffers = "left"
 let g:jedi#show_call_signatures = "1"
 
+
+" NERDTree config
+" Use :NERDTree to open it
+
+" Automatically opens NERDTree with vim and puts cursor on file opened
+autocmd VimEnter * NERDTree | wincmd p
+
+
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 
 
