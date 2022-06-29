@@ -53,10 +53,14 @@ set number
 " Remap window switching commands
 " F5 -> Left F6 -> Down
 " F7 -> Up F8 -> Right
+" F9 -> Decrease split window width
+" F11 -> Increase split window width
 nmap <F5> <C-w>h
 nmap <F6> <C-w>j
 nmap <F7> <C-w>k
 nmap <F8> <C-w>l
+nmap <F9> <C-w><
+nmap <F11> <C-w>>
 
 " Plugins
 call plug#begin()
