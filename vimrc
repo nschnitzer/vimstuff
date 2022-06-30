@@ -53,8 +53,8 @@ set number
 " Remap window switching commands
 " F5 -> Left F6 -> Down
 " F7 -> Up F8 -> Right
-" F9 -> Window Width Decrease
-" F11 -> Window Width Increase
+" F9 -> Decrease split window width
+" F11 -> Increase split window width
 nmap <F5> <C-w>h
 nmap <F6> <C-w>j
 nmap <F7> <C-w>k
