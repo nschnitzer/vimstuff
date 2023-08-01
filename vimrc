@@ -26,6 +26,7 @@ filetype plugin indent on
 
 set wrap
 
+" F2 toggles copy and paste w/ C-v
 nnoremap <F2> :set invpaste paste?<CR>
 imap <F2> <C-O>:set invpaste paste?<CR>
 set pastetoggle=<F2>
@@ -73,15 +74,25 @@ call plug#begin()
 
 Plug 'junegunn/vim-easy-align'
 
-Plug 'joshdick/onedark.vim'
 
 Plug 'davidhalter/jedi-vim'
 
-Plug 'ajh17/spacegray.vim'
+
+Plug 'vim-scripts/wombat'
 
 Plug 'scrooloose/nerdtree'
 
 Plug 'PhilRunninger/nerdtree-buffer-ops'
+
+Plug 'vhda/verilog_systemverilog.vim'
+
+Plug 'ervandew/supertab'
+
+Plug 'vim-scripts/tcl.vim--smithfield'
+
+Plug 'vim-scripts/tcl_itcl.vim'
+
+Plug 'universal-ctags/ctags'
 
 call plug#end()
 
@@ -98,8 +109,8 @@ nmap ga <Plug>(EasyAlign)
 
 
 " Space gray theme
-":set termguicolors
-colorscheme spacegray
+:set termguicolors
+colorscheme wombat
 
 " Jedi Vim Config
 let g:jedi#use_tabs_not_buffers = 1
@@ -116,6 +127,14 @@ autocmd VimEnter * NERDTree | wincmd p
 
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+set omnifunc=syntaxcomplete#Complete
+
+let g:SuperTabDefaultCompetionType = 'context'
+
+
+" Temp Disable Search Highlighting w/ ESC
+map <esc> :noh <CR>
 
 
 
