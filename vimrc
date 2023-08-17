@@ -94,6 +94,10 @@ Plug 'vim-scripts/tcl_itcl.vim'
 
 Plug 'universal-ctags/ctags'
 
+Plug 'bfrg/vim-cpp-modern'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
 
 
@@ -135,6 +139,14 @@ let g:SuperTabDefaultCompetionType = 'context'
 
 " Temp Disable Search Highlighting w/ ESC
 map <esc> :noh <CR>
+
+
+set encoding=utf-8
+
+set updatetime=300
+
+set signcolumn=yes
+
 
 
 
